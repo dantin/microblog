@@ -64,3 +64,6 @@ target/
 # ignore SQL-Lite Database
 db_repository/
 app.db
+
+tmp/*
+!tmp/.gitkeep
