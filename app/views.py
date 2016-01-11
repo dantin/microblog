@@ -60,6 +60,17 @@ def after_login(resp):
     return redirect(request.args.get('next') or url_for('index'))
 
 
+@app.errorhandler(404)
+def internal_error(error):
+    return render_template('404.html'), 404
+
+
+@app.errorhandler(500)
+def internal_error(error):
+    db.session.rollback()
+    return render_template('500.html'), 500
+
+
 @lm.user_loader
 def load_user(id):
     return User.query.get(int(id))
