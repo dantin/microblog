@@ -1,5 +1,6 @@
 # -*- coding=utf-8 -*-
 from app import db
+from hashlib import md5
 
 
 class User(db.Model):
@@ -22,6 +23,9 @@ class User(db.Model):
             return unicode(self.id)  # python 2
         except NameError:
             return str(self.id)  # python 3
+
+    def avatar(self, size):
+        return 'http://www.gravatar.com/avatar/' + md5(self.email).hexdigest() + '?d=mm&s=' + str(size)
 
     def __repr__(self):
         return '<User %r>' % self.nickname
