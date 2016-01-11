@@ -60,3 +60,7 @@ target/
 
 # Created by .ignore support plugin (hsz.mobi)
 .idea/
+
+# ignore SQL-Lite Database
+db_repository/
+app.db
