@@ -8,6 +8,8 @@ class User(db.Model):
     nickname = db.Column(db.String(64), unique=True)
     email = db.Column(db.String(120), unique=True)
     posts = db.relationship('Post', backref='author', lazy='dynamic')
+    about_me = db.Column(db.String(140))
+    last_seen = db.Column(db.DateTime)
 
     def is_authenticated(self):
         return True
