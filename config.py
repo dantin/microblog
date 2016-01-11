@@ -12,3 +12,12 @@ SECRET_KEY = 'you-will-never-guess'
 OPENID_PROVIDERS = [
     {'name': 'Yahoo', 'url': 'https://me.yahoo.com'},
 ]
+
+# mail server settings
+MAIL_SERVER = 'localhost'
+MAIL_PORT = 30025
+MAIL_USERNAME = None
+MAIL_PASSWORD = None
+
+# administrator list
+ADMINS = ['dingchengjie@aztechx.com']
